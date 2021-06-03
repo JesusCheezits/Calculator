@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-import reportWebVitals from './reportWebVitals';
-
 
 class Calc extends React.Component {
   constructor(props) {
@@ -64,38 +62,36 @@ class Calc extends React.Component {
   }
   render() {
     return (
-      <div className = 'App'>
-        <div className = 'display input'>
+      <div class = 'App'>
+        <div id = 'display' class = 'input display'>
           <h3>{this.state.input}</h3>
-          {console.log(this.state.input)}
-          {console.log(this.state.input.lastIndexOf('.'))}
         </div>
-        <div> 
-          <button style={{fontSize: 20}} onClick = {this.handleClear} className = 'btn-ind-large clear'>Clear</button>
-          <button style={{fontSize: 20}} value = {'÷'} onClick = {e => this.handleOperation(e, 'value')}className = "divide btn-ind-small btn-right">÷</button>       
+        <div class = 'btn-row'> 
+          <button onClick = {this.handleClear} class = 'btn-ind-large' id =  'clear'>Clear</button>
+          <button value = {'÷'} onClick = {e => this.handleOperation(e, 'value')} class = 'btn-ind-small btn-right' id = "divide">÷</button>       
          </div>
-         <div> 
-          <button style={{fontSize: 20}} value = {'7'} onClick = {e => this.handleNumberInput(e, 'value')} className = "seven btn-ind-small">7</button>
-          <button style={{fontSize: 20}}value = {'8'} onClick = {e => this.handleNumberInput(e, 'value')} className = "eight btn-ind-small">8</button>
-          <button style={{fontSize: 20}}value = {'9'} onClick = {e => this.handleNumberInput(e, 'value')} className = "nine btn-ind-small">9</button>
-          <button style={{fontSize: 20}}value = {'x'} onClick = {e => this.handleOperation(e, 'value')} className = "multiply btn-ind-small btn-right">x</button>
+         <div class = 'btn-row'> 
+          <button value = {'7'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "seven">7</button>
+          <button value = {'8'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "eight">8</button>
+          <button value = {'9'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "nine">9</button>
+          <button value = {'x'} onClick = {e => this.handleOperation(e, 'value')} class = 'btn-ind-small btn-right' id = "multiply">x</button>
         </div>
-        <div> 
-          <button style={{fontSize: 20}} value = {'4'} onClick = {e => this.handleNumberInput(e, 'value')} className = "four  btn-ind-small">4</button>
-          <button style={{fontSize: 20}} value = {'5'} onClick = {e => this.handleNumberInput(e, 'value')} className = "five  btn-ind-small">5</button>
-          <button style={{fontSize: 20}} value = {'6'} onClick = {e => this.handleNumberInput(e, 'value')} className = "six  btn-ind-small">6</button>
-          <button style={{fontSize: 20}} value = {'-'} onClick = {e => this.handleOperation(e, 'value')}className = "subtract  btn-ind-small btn-right">-</button>
+        <div class = 'btn-row'> 
+          <button value = {'4'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "four">4</button>
+          <button value = {'5'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "five">5</button>
+          <button value = {'6'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "six">6</button>
+          <button value = {'-'} onClick = {e => this.handleOperation(e, 'value')} class = 'btn-ind-small btn-right' id = "subtract">-</button>
         </div>
-        <div> 
-          <button style={{fontSize: 20}} value = {'1'} onClick = {e => this.handleNumberInput(e, 'value')} className = "one btn-ind-small">1</button>
-          <button style={{fontSize: 20}} value = {'2'} onClick = {e => this.handleNumberInput(e, 'value')} className = "two btn-ind-small">2</button>
-          <button style={{fontSize: 20}} value = {'3'} onClick = {e => this.handleNumberInput(e, 'value')} className = "three btn-ind-small">3</button>
-          <button style={{fontSize: 20}} value = {'+'} onClick = {e => this.handleOperation(e, 'value')}className = "add btn-ind-small btn-right">+</button>
+        <div class = 'btn-row'> 
+          <button value = {'1'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "one">1</button>
+          <button value = {'2'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "two">2</button>
+          <button value = {'3'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "three">3</button>
+          <button value = {'+'} onClick = {e => this.handleOperation(e, 'value')} class = 'btn-ind-small btn-right' id = "add">+</button>
         </div>
-        <div>
-          <button style={{fontSize: 20}} value = {'0'} onClick = {e => this.handleNumberInput(e, 'value')} className = "zero btn-ind-med">0</button>
-          <button style={{fontSize: 20}} value = {'.'} onClick = {e => this.handleNumberInput(e, 'value')} className = "decimal btn-ind-small">.</button>
-          <button style={{fontSize: 20}} onClick = {this.handleEquals} className = "equals btn-ind-small btn-right">=</button>
+        <div class = 'btn-row'>
+          <button value = {'0'} onClick = {e => this.handleNumberInput(e, 'value')} id = "zero" class =  "btn-ind-med">0</button>
+          <button value = {'.'} onClick = {e => this.handleNumberInput(e, 'value')} class = 'btn-ind-small' id = "decimal">.</button>
+          <button onClick = {this.handleEquals} class = 'btn-ind-small btn-right' id = "equals">=</button>
           </div> 
       </div>
 
@@ -122,12 +118,13 @@ const calculate = function(input) {
         if (inputCopy[j] === 'x' || inputCopy[j] === '+' || inputCopy[j] === '-' || input[j] === '÷' ) {
               break;
         }
-        tempLeftArray.unshift(inputCopy[j]); 
+        tempLeftArray.unshift(inputCopy[j]);
             inputCopy.splice(j, 1);
             j--;
             countLeft++;
       }
-      var k = i - countLeft + 1; //index to right of operation
+      
+      var k = i - countLeft + 1; //index to right of operatio
       while (k < length) {
         if (inputCopy[k] === 'x' || inputCopy[k] === '+' || inputCopy[k] === '-' || inputCopy[k] === '÷' ) {
           break;
@@ -169,14 +166,12 @@ const calculate = function(input) {
         combine('÷', i);
       }
     }
-    for (let i = 0; i <length; i++) {
-      if (inputCopy[i] === '+') {
-        combine('+', i);
-      }
-    }
-    for (let i = 0; i < length; i ++) {
-      if (inputCopy[i] === '-') {
-        combine('-', i);
+    for (let i = 0; i < inputCopy.length; i++) {
+      var temp = '';
+      if (inputCopy[i] === '+' || inputCopy[i] === '-') {
+        temp = inputCopy[i];
+        combine(temp, i);
+        i = 0;
       }
     }
     return inputCopy;
@@ -192,8 +187,18 @@ const decimalCheck = function(input, length) {
     }
   }
 } 
-  
+  //return true if character in bewteen the current . and the last .  is an operation  
+//   if (buttonValue === '.'  && (length >= 2) && (length - 1 - input.lastIndexOf('.') < 3)) {
+//    for (let i = input.lastIndexOf('.'); i < length; i++) {
+//      if (input[i] !== '+' || input[i] !== 'x' || input[i] !== '-' || input[i] !== '÷') {
+//        return false;
+//       }
+//     }
+//   } return true;
+// }
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+
